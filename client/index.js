@@ -75,7 +75,7 @@ var Checkout = React.createFactory(React.createClass({
     }, 'You just paid $' + total);
     var audio = React.DOM.audio({
       src: 'register.mp3',
-      autoplay: true
+      autoPlay: true
     });
     return React.DOM.div({
       width: '100%'
