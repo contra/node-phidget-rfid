@@ -66,13 +66,18 @@ var Checkout = React.createFactory(React.createClass({
     var total = Object.keys(this.props.cart).reduce(function(prev, itemId){
       return prev + items[itemId].price;
     }, 0);
-    return React.DOM.h2({
+    var header = React.DOM.h2({
       width: '100%',
       style: {
         padding: 50,
         textAlign: 'center'
       }
     }, 'You just paid $' + total);
+    var audio = React.DOM.audio({
+      src: 'register.mp3',
+      autoplay: true
+    });
+    return [header, audio];
   }
 }));
 
