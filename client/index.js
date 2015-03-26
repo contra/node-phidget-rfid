@@ -17,17 +17,28 @@ var Cart = React.createFactory(React.createClass({
   render: function(){
     var tableItems = Object.keys(this.props.cart).map(function(itemId){
       var product = items[itemId];
-      var image = React.DOM.td(null, React.DOM.img({
-        src: product.image,
-        className: 'checkout-item-image',
+      var image = React.DOM.td({
         style: {
-          padding: 10,
-          maxHeight: 100,
+          textAlign: 'center'
+        }
+      }, React.DOM.img({
+        src: product.image,
+        className: 'pure-img checkout-item-image',
+        style: {
+          padding: 5,
           maxWidth: 100
         }
       }));
-      var name = React.DOM.td(null, product.name);
-      var price = React.DOM.td(null, product.price);
+      var name = React.DOM.td({
+        style: {
+          textAlign: 'center'
+        }
+      }, product.name);
+      var price = React.DOM.td({
+        style: {
+          textAlign: 'center'
+        }
+      }, product.price);
       return React.DOM.tr({
         className: 'checkout-item'
       }, image, name, price);
