@@ -1,10 +1,7 @@
 var phidget = require('./lib/phidget');
 
 // shopping basket items
-var cart = {
-  'AB4ATW7YAA==': true,
-  'AB4ATX7bAA==': true
-};
+var cart = {};
 var listening = false;
 var lastScan = 0;
 
