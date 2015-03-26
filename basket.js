@@ -12,6 +12,9 @@ dev.on('noMatch', function(){
 });
 
 dev.on('touch', function(id){
+  if (!listening) {
+    return;
+  }
   listening = false;
   lastScan = Date.now();
   if (!cart[id]) {
