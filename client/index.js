@@ -69,7 +69,7 @@ var Checkout = React.createFactory(React.createClass({
     return React.DOM.h2({
       width: '100%',
       style: {
-        padding: 50
+        padding: 50,
         textAlign: 'center'
       }
     }, 'You just paid $' + total);
