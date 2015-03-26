@@ -1,5 +1,4 @@
 var express = require('express');
-var staticCache = require('express-static-cache');
 var app = express();
 
 var cart = require('./basket');
@@ -12,9 +11,6 @@ app.get('/status', function(req, res){
   });
 });
 
-app.use(staticCache(__dirname, '/client', {
-  maxAge: 365 * 24 * 60 * 60
-}));
 app.use(express.static(__dirname + '/client'));
 
 app.listen(8080);
