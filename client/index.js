@@ -77,7 +77,9 @@ var Checkout = React.createFactory(React.createClass({
       src: 'register.mp3',
       autoplay: true
     });
-    return [header, audio];
+    return React.DOM.div({
+      width: '100%'
+    }, header, audio);
   }
 }));
 
