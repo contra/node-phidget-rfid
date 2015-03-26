@@ -31,8 +31,4 @@ dev.on('touch', function(id){
   }
 });
 
-setInterval(logCart, 2000);
-
-function logCart(){
-  console.log('cart', cart);
-}
+module.exports = cart;
