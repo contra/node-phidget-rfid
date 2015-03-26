@@ -5,7 +5,9 @@ var cart = {};
 var listening = false;
 var lastScan = 0;
 
-var dev = phidget.create();
+var dev = phidget.create({
+  serial: '35253'
+});
 
 dev.on('noMatch', function(){
   listening = (lastScan <= Date.now() - 2000);
