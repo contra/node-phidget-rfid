@@ -11,7 +11,7 @@ dev.on('noMatch', function(){
   listening = (lastScan <= Date.now() - 2000);
 });
 
-dev.on('data', function(id){
+dev.on('touch', function(id){
   listening = false;
   lastScan = Date.now();
   if (!cart[id]) {
