@@ -84,7 +84,7 @@ var Application = React.createFactory(React.createClass({
     };
   },
   componentWillMount: function(){
-    this.interval = setInterval(this.check, 1000);
+    this.interval = setInterval(this.check, 100);
   },
   check: function(){
     superagent.get('/status')
