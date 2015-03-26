@@ -55,7 +55,13 @@ var Checkout = React.createFactory(React.createClass({
     var total = Object.keys(this.props.cart).reduce(function(prev, itemId){
       return prev + items[itemId].price;
     }, 0);
-    return React.DOM.div(null, 'You just paid $' + total);
+    return React.DOM.h2({
+      width: '100%',
+      style: {
+        padding: 50
+        textAlign: 'center'
+      }
+    }, 'You just paid $' + total);
   }
 }));
 
