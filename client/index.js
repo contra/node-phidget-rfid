@@ -19,7 +19,12 @@ var Cart = React.createFactory(React.createClass({
       var product = items[itemId];
       var image = React.DOM.td(null, React.DOM.img({
         src: product.image,
-        className: 'checkout-item-image'
+        className: 'checkout-item-image',
+        style: {
+          padding: 10,
+          maxHeight: 100,
+          maxWidth: 100
+        }
       }));
       var name = React.DOM.td(null, product.name);
       var price = React.DOM.td(null, product.price);
@@ -35,15 +40,22 @@ var Cart = React.createFactory(React.createClass({
         React.DOM.th(null, 'Price')
       )
     );
-    var table = React.DOM.table({
-      className: 'pure-table'
-    }, tableHeader, React.DOM.tbody(null, tableItems));
+    return React.DOM.table({
+      className: 'pure-table',
+      width: '100%'
+    },
+      tableHeader,
+      React.DOM.tbody(null, tableItems)
+    );
   }
 }));
 
 var Checkout = React.createFactory(React.createClass({
   render: function(){
-    return React.DOM.div(null, 'Test Checkout');
+    var total = Object.keys(this.props.cart).reduce(function(prev, itemId){
+      return prev + items[itemId].price;
+    }, 0);
+    return React.DOM.div(null, 'You just paid $' + total);
   }
 }));
 
@@ -76,4 +88,4 @@ var Application = React.createFactory(React.createClass({
   }
 }));
 
-React.render(Cart(), document.body);
+React.render(Application(), document.body);
