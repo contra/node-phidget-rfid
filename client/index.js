@@ -93,7 +93,7 @@ var Application = React.createFactory(React.createClass({
         if (err) return console.error(err);
         this.setState({
           cart: res.body.cart,
-          needsCheckout: res.body.needsCheckout
+          needsCheckout: res.body.checkout.needsCheckout
         });
       }.bind(this));
   },
