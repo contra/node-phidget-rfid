@@ -3,7 +3,7 @@ var items = {
     name: 'Heavy Duty Forks',
     description: '24 count',
     image: 'http://ecx.images-amazon.com/images/I/716g81hH-oL._SX355_.jpg',
-    price: 1.50
+    price: 1.52
   },
   'AB4ATX7bAA==': {
     name: 'Apricot Cashew Granola',
